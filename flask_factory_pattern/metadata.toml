@@ -1,0 +1,5 @@
+[database]
+
+    [database.initial]
+    name = "Initial"
+    description = "Some initial configuration could be insert here"

@@ -1,0 +1,56 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "description": "Some description here",
+        "version": "1.0.0",
+        "title": "API Documentation.",
+        "license": {
+            "name": "SOME_LICENSE_HERE",
+            "url": "SOME_LICENSE_URL_HERE"
+        }
+    },
+    "components": {
+        "schemas": {
+            "example_model":{
+                "type" : "object",
+                "properties" : {
+                    "name" : {
+                        "type" : "string"
+                    },
+                    "description" : {
+                        "type" : "string"
+                    }
+                }
+            }
+        }
+    },
+    "paths": {
+        "/api/v1/example": {
+            "get": {
+                "tags": [
+                    "Example endpoint"
+                ],
+                "summary": "API example",
+                "requestBody": {
+                    "description": "Get example in API.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/example_model"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/components/schemas/example_model"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
